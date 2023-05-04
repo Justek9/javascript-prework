@@ -4,20 +4,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kamień, papier, nożyce</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<div class="container">
-		<div id="buttons">
-			<button id="play-rock"> KAMIEŃ </button>
-			<button id="play-paper">PAPIER</button>
-			<button id="play-scissors">NOŻYCE</button>
+		<h1>Gra "papier, kamień, nożyce"</h1>
+		<div class="wrapper">
+			<div class="player-moves">
+				<p>Wybierz swój ruch:</p>
+				<div id="icons">
+					<i class="fa-regular fa-hand-back-fist" id="play-rock"></i>
+					<i class="fa-regular fa-hand" id="play-paper"></i>
+					<i class="fa-regular fa-hand-scissors" id="play-scissors"></i>
+				</div>
+			</div>
+			<div class="computer-moves">
+				<p>Ruch komputera:</p>
+				<div class="dispaly-computer-move">
+					<i class="fa-regular fa-hand-back-fist hidden" id="comp-play-rock"></i>
+					<i class="fa-regular fa-hand hidden" id="comp-play-paper"></i>
+					<i class="fa-regular fa-hand-scissors hidden" id="comp-play-scissors"></i>
+					</divclass>
+				</div>
+
+			</div>
+
 		</div>
-		<div id="messages"></div>
-	</div>
-	<script src="js/functions.js"></script>
-	<script src="js/script.js"></script>
+		<div id="messages">
+			<p id="result"> Wynik gry:</p>
+			<p class="points"> Twoje punkty: </p>
+			<p class="points"> Punkty komputera: </p>
+			<button class="reset">RESET</button>
+		</div>
+		<script src="js/functions.js"></script>
+		<script src="js/script.js"></script>
 </body>
 
 </html>

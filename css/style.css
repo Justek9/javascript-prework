@@ -1,1 +1,91 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #90e0ef;
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container {
+  height: 80vh;
+  width: 50vw;
+  background-color: #caf0f8;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  padding: 30px;
+}
+.container h1 {
+  text-align: center;
+  font-size: 80px;
+}
+
+#icons,
+.dispaly-computer-move {
+  display: flex;
+  justify-content: center;
+}
+
+i {
+  font-size: 150px;
+  padding: 10px;
+  cursor: pointer;
+  align-self: center;
+}
+
+p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 60px;
+  text-align: center;
+}
+
+.player-moves,
+.computer-moves {
+  flex: 0 50%;
+}
+
+.hidden {
+  display: none;
+}
+
+#result {
+  margin-top: 20px;
+  color: #0077b8;
+  text-align: center;
+}
+
+button {
+  background-color: #0077b8;
+  color: white;
+  min-height: 40px;
+  width: 200px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  left: 50%;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #0077b8;
+  background-color: #fff;
+  transition: all 1.5s;
+}
+
+.points {
+  font-size: 40px;
+}/*# sourceMappingURL=style.css.map */
