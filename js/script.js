@@ -86,8 +86,8 @@ function playGame(playerInput) {
 }
 
 // Add event listeners
-const startPlaying = function () {
-	playGame(3)
+const startPlaying = function (event) {
+	playGame(event.target.dataset.no)
 	this.classList.add('i-clicked')
 	console.log(this)
 	movesArr.forEach(el => el.removeEventListener('click', startPlaying))
@@ -113,5 +113,3 @@ resetBtn.addEventListener('click', function () {
 	compPoints.innerHTML = '0'
 	playerPoints.innerHTML = '0'
 })
-
-// Remove listeners to players moves
