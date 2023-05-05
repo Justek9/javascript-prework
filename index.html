@@ -36,10 +36,16 @@
 
 		</div>
 		<div id="messages">
-			<p id="result"> Wynik gry:</p>
-			<p class="points"> Twoje punkty: </p>
-			<p class="points"> Punkty komputera: </p>
-			<button class="reset">RESET</button>
+			<p class="round"> Runda: <span id="round">1</span></p>
+			<p id="result">Wynik gry: </p>
+			<div class="points-wrapper">
+				<p class="points"> Twoje punkty: <span id="players-points">0</span>
+				<p class="points"> Punkty komputera: <span id="computers-points">0</span> </p>
+			</div>
+			<div class="btns">
+				<button id="next-round">Następna runda</button>
+				<button id="reset">RESET</button>
+			</div>
 		</div>
 		<script src="js/functions.js"></script>
 		<script src="js/script.js"></script>

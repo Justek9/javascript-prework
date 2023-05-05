@@ -1,10 +1,24 @@
 'use strict'
 
 let result = document.getElementById('result')
+const resetBtn = document.getElementById('reset')
+const roundBtn = document.getElementById('next-round')
+const rockButton = document.getElementById('play-rock')
+const paperButton = document.getElementById('play-paper')
+const scissorskButton = document.getElementById('play-scissors')
+const noOfRound = document.getElementById('round')
+let playRock = document.getElementById('comp-play-rock')
+let playScissors = document.getElementById('comp-play-scissors')
+let playPaper = document.getElementById('comp-play-paper')
+const compPoints = document.getElementById('computers-points')
+const playerPoints = document.getElementById('players-points')
+let round = 1
+let compScore = 0
+let playerScore = 0
+let movesArr = [rockButton, paperButton, scissorskButton]
+let compMoves = [playRock, playPaper, playScissors]
 
 function playGame(playerInput) {
-	// clearMessages()
-
 	// Set moves
 
 	function getMoveName(argMoveId) {
@@ -20,15 +34,9 @@ function playGame(playerInput) {
 	// Computer's move
 
 	let randomNumber = Math.floor(Math.random() * 3 + 1)
-	// console.log('Wylosowana liczba to: ' + randomNumber)
 	let computerMove = getMoveName(randomNumber)
 
-	let playRock = document.getElementById('comp-play-rock')
-
-	let playScissors = document.getElementById('comp-play-scissors')
-
-	let playPaper = document.getElementById('comp-play-paper')
-
+	// sjow it on te screen
 	if (computerMove == 'kamień') {
 		playRock.classList.remove('hidden')
 	} else if (computerMove == 'papier') {
@@ -38,33 +46,40 @@ function playGame(playerInput) {
 	}
 
 	// Player's move
-
 	let playerMove = getMoveName(playerInput)
 
 	// Setting game result
-
-	console.log(result.innerHTML)
-	console.log(result.textContent)
-
 	function displayResult(argComputerMove, argPlayerMove) {
 		if (argComputerMove == 'kamień' && argPlayerMove == 'papier') {
 			result.innerHTML = 'Wynik gry: Ty wygrywasz!'
+			playerScore++
+			playerPoints.innerHTML = playerScore
 		} else if (argComputerMove == 'kamień' && argPlayerMove == 'nożyce') {
 			result.innerHTML = 'Wynik gry: Komputer wygrywa!'
+			compScore++
+			compPoints.innerHTML = compScore
 		} else if (argComputerMove == 'kamień' && argPlayerMove == 'kamień') {
 			result.innerHTML = 'Wynik gry: remis'
 		} else if (argComputerMove == 'papier' && argPlayerMove == 'papier') {
 			result.innerHTML = 'Wynik gry: remis'
 		} else if (argComputerMove == 'papier' && argPlayerMove == 'nożyce') {
 			result.innerHTML = 'Wynik gry: Ty wygrywasz!'
+			playerScore++
+			playerPoints.innerHTML = playerScore
 		} else if (argComputerMove == 'papier' && argPlayerMove == 'kamień') {
 			result.innerHTML = 'Wynik gry: Komputer wygrywa!'
+			compScore++
+			compPoints.innerHTML = compScore
 		} else if (argComputerMove == 'nożyce' && argPlayerMove == 'papier') {
 			result.innerHTML = 'Wynik gry: Komputer wygrywa'
+			compScore++
+			compPoints.innerHTML = compScore
 		} else if (argComputerMove == 'nożyce' && argPlayerMove == 'nożyce') {
 			result.innerHTML = 'Wynik gry: remis'
 		} else if (argComputerMove == 'nożyce' && argPlayerMove == 'kamień') {
 			result.innerHTML = 'Wynik gry: Ty wygrywasz'
+			playerScore++
+			playerPoints.innerHTML = playerScore
 		}
 	}
 	displayResult(computerMove, playerMove)
@@ -72,21 +87,34 @@ function playGame(playerInput) {
 
 // Add event listeners
 
-let rockButton = document.getElementById('play-rock')
-let paperButton = document.getElementById('play-paper')
-let scissorskButton = document.getElementById('play-scissors')
-
 rockButton.addEventListener('click', function () {
 	playGame(1)
-	document.getElementById('play-rock').style.color = 'blue'
+	rockButton.classList.add('i-clicked')
 })
 
 paperButton.addEventListener('click', function () {
 	playGame(2)
-	document.getElementById('play-paper').style.color = 'blue'
+	paperButton.classList.add('i-clicked')
 })
 
 scissorskButton.addEventListener('click', function () {
 	playGame(3)
-	document.getElementById('play-scissors').style.color = 'blue'
+	scissorskButton.classList.add('i-clicked')
+})
+
+roundBtn.addEventListener('click', function () {
+	movesArr.forEach(el => el.classList.remove('i-clicked'))
+	round++
+	noOfRound.innerHTML = round
+	compMoves.forEach(el => el.classList.add('hidden'))
+	result.innerHTML = 'Wynik gry:'
+})
+
+resetBtn.addEventListener('click', function () {
+	movesArr.forEach(el => el.classList.remove('i-clicked'))
+	compMoves.forEach(el => el.classList.add('hidden'))
+	result.innerHTML = 'Wynik gry:'
+	noOfRound.innerHTML = '0'
+	compPoints.innerHTML = '0'
+	playerPoints.innerHTML = '0'
 })
