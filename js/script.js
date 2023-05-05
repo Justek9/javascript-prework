@@ -86,21 +86,15 @@ function playGame(playerInput) {
 }
 
 // Add event listeners
-
-rockButton.addEventListener('click', function () {
-	playGame(1)
-	rockButton.classList.add('i-clicked')
-})
-
-paperButton.addEventListener('click', function () {
-	playGame(2)
-	paperButton.classList.add('i-clicked')
-})
-
-scissorskButton.addEventListener('click', function () {
+const startPlaying = function () {
 	playGame(3)
-	scissorskButton.classList.add('i-clicked')
-})
+	this.classList.add('i-clicked')
+	console.log(this)
+	movesArr.forEach(el => el.removeEventListener('click', startPlaying))
+}
+rockButton.addEventListener('click', startPlaying)
+paperButton.addEventListener('click', startPlaying)
+scissorskButton.addEventListener('click', startPlaying)
 
 roundBtn.addEventListener('click', function () {
 	movesArr.forEach(el => el.classList.remove('i-clicked'))
@@ -108,6 +102,7 @@ roundBtn.addEventListener('click', function () {
 	noOfRound.innerHTML = round
 	compMoves.forEach(el => el.classList.add('hidden'))
 	result.innerHTML = 'Wynik gry:'
+	movesArr.forEach(el => el.addEventListener('click', startPlaying))
 })
 
 resetBtn.addEventListener('click', function () {
@@ -118,3 +113,5 @@ resetBtn.addEventListener('click', function () {
 	compPoints.innerHTML = '0'
 	playerPoints.innerHTML = '0'
 })
+
+// Remove listeners to players moves
