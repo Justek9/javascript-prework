@@ -17,8 +17,8 @@ body {
 }
 
 .container {
-  height: 80vh;
-  width: 50vw;
+  height: 85vh;
+  width: 60vw;
   background-color: #caf0f8;
   position: absolute;
   top: 50%;
@@ -99,4 +99,55 @@ button:hover {
 .btns {
   display: flex;
   justify-content: space-around;
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+  .container {
+    height: 90vh;
+    width: 80vw;
+  }
+  .container h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 30px;
+  }
+  .points {
+    font-size: 25px;
+  }
+  i {
+    font-size: 38px;
+  }
+  #icons,
+.dispaly-computer-move,
+.btns,
+.points-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    height: 95vh;
+    width: 95vw;
+  }
+  .container h1 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 12.5px;
+  }
+  .points {
+    font-size: 20px;
+  }
+  i {
+    font-size: 30px;
+  }
+  #icons,
+.dispaly-computer-move,
+.btns,
+.points-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */
