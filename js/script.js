@@ -83,11 +83,10 @@
 		}
 		displayResult(computerMove, playerMove)
 	}
-
 	// Add event listeners
 	const startPlaying = function (event) {
 		playGame(event.target.dataset.no)
-		event.classList.add('i-clicked')
+		this.classList.add('i-clicked')
 		movesArr.forEach(el => el.removeEventListener('click', startPlaying))
 	}
 
