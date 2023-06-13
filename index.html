@@ -12,43 +12,47 @@
 </head>
 
 <body>
-	<div class="container">
-		<h1>Gra "papier, kamień, nożyce"</h1>
-		<div class="wrapper">
-			<div class="player-moves">
-				<p>Wybierz swój ruch:</p>
-				<div id="icons">
-					<i class="fa-regular fa-hand-back-fist" data-no="1" id="play-rock"></i>
-					<i class="fa-regular fa-hand" data-no="2" id="play-paper"></i>
-					<i class="fa-regular fa-hand-scissors" data-no="3" id="play-scissors"></i>
+	<div class="main-wrapper">
+		<div class="container">
+			<h1>Gra "papier, kamień, nożyce"</h1>
+			<div class="wrapper">
+				<div class="player-moves">
+					<p>Wybierz swój ruch:</p>
+					<div id="icons">
+						<i class="fa-regular fa-hand-back-fist" data-no="1" id="play-rock"></i>
+						<i class="fa-regular fa-hand" data-no="2" id="play-paper"></i>
+						<i class="fa-regular fa-hand-scissors" data-no="3" id="play-scissors"></i>
+					</div>
 				</div>
-			</div>
-			<div class="computer-moves">
-				<p>Ruch komputera:</p>
-				<div class="dispaly-computer-move">
-					<i class="fa-regular fa-hand-back-fist hidden" id="comp-play-rock"></i>
-					<i class="fa-regular fa-hand hidden" id="comp-play-paper"></i>
-					<i class="fa-regular fa-hand-scissors hidden" id="comp-play-scissors"></i>
-					</divclass>
+				<div class="computer-moves">
+					<p>Ruch komputera:</p>
+					<div class="dispaly-computer-move">
+						<i class="fa-regular fa-hand-back-fist hidden" id="comp-play-rock"></i>
+						<i class="fa-regular fa-hand hidden" id="comp-play-paper"></i>
+						<i class="fa-regular fa-hand-scissors hidden" id="comp-play-scissors"></i>
+					</div>
+				</div>
+				<div class="messages">
+					<p class="round"> Runda: <span id="round">1</span></p>
+					<p id="result">Wynik gry: </p>
+					<div class="points-wrapper">
+						<p class="points"> Twoje punkty: <span id="players-points">0</span></p>
+						<p class="points"> Punkty komputera: <span id="computers-points">0</span> </p>
+					</div>
+					<div class="btns">
+						<button type="button" id="next-round">Następna runda</button>
+						<button type="reset" id="reset">RESET</button>
+					</div>
 				</div>
 
 			</div>
 
 		</div>
-		<div id="messages">
-			<p class="round"> Runda: <span id="round">1</span></p>
-			<p id="result">Wynik gry: </p>
-			<div class="points-wrapper">
-				<p class="points"> Twoje punkty: <span id="players-points">0</span>
-				<p class="points"> Punkty komputera: <span id="computers-points">0</span> </p>
-			</div>
-			<div class="btns">
-				<button id="next-round">Następna runda</button>
-				<button id="reset">RESET</button>
-			</div>
-		</div>
-		<script src="js/functions.js"></script>
-		<script src="js/script.js"></script>
+
+
+	</div>
+	<script src="js/functions.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
